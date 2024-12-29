@@ -57,7 +57,7 @@ const Home = () => {
       const data = allData.filter((item : any)=> item?.name.toLowerCase().includes(searchValue))
       setSearchData(data)
     }
-  }, [searchValue]);
+  }, [searchValue, allData]);
 
   useEffect(()=>{
     if(searchValue?.length){

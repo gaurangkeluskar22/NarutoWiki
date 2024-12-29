@@ -9,7 +9,6 @@ import img7 from "@/public/Tsunade Senju.webp";
 import img8 from "@/public/Danzō Shimura.webp";
 import img9 from "@/public/Shikamaru Nara.webp";
 import naruto from "@/public/image_processing20210205-2768-kegnw4-removebg.webp";
-import narutoText from "@/public/logo.webp";
 import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import { HiMiniSpeakerWave } from "react-icons/hi2";
