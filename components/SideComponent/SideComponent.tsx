@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import narutoImg from '@/public/naruto.webp'
 
 
 interface SideComponentProp {
@@ -11,7 +12,6 @@ const SideComponent: React.FC<SideComponentProp> = ({
   data,
   setSelectedId,
 }) => {
-  console.log("data:", data, data?.name);
   const sideComponentRef = useRef<HTMLDivElement | null>(null);
 
   const handleCancleClick = () => {
@@ -59,13 +59,13 @@ const SideComponent: React.FC<SideComponentProp> = ({
         </div>
         <div className="overflow-y-scroll h-[calc(100vh-80px)] w-full sm:h-auto sm:overflow-auto flex flex-col justify-start items-center">
           {data?.images ? (
-            <Image
+            <img
                 alt="profile-image"
               src={data?.images[0]}
               className="w-7/12 aspect-square mt-5 mb-3 rounded-2xl object-cover object-top"
             />
           ) : (
-            <Image alt="naruto-img" src="/naruto.webp" className="w-6/6 opacity-60 mt-10" />
+            <Image alt="naruto-img" src={narutoImg} className="w-6/6 opacity-60 mt-10" />
           )}
           {data?.name && <div className="text-2xl font-bold">{data.name}</div>}
           {data?.personal?.clan && (

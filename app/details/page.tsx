@@ -93,9 +93,6 @@ const Home = () => {
     setSelectedId(id);
   };
 
-  useEffect(() => {
-    console.log("anime data", animeData);
-  }, [animeData]);
 
   return (
     <div className="mt-5 mb-0 sm:mx-auto md:w-[768px] lg:w-[1024px] xl:w-[1280px] 2xl:w-[1436px] sm:w-full mx-5">

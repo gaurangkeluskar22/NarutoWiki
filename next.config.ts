@@ -8,6 +8,17 @@ const nextConfig : NextConfig = {
     });
     return config;
   },
+  images: {
+    domains: ['static.wikia.nocookie.net'],
+    // Or if you prefer using remotePatterns (Next.js 13+)
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'static.wikia.nocookie.net',
+        pathname: '/**',
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;
