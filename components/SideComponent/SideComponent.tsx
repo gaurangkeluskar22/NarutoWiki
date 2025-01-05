@@ -67,11 +67,11 @@ const SideComponent: React.FC<SideComponentProp> = ({
           ) : (
             <Image alt="naruto-img" src={narutoImg} className="w-6/6 opacity-60 mt-10" />
           )}
-          {data?.name && <div className="text-2xl font-bold">{data.name}</div>}
+          {data?.name && <div className="text-2xl font-bold text-black">{data.name}</div>}
           {data?.personal?.clan && (
             <>
               <div>Clan</div>
-              <div className="bg-gray-200 rounded-lg px-2 py-1 font-semibold">
+              <div className="bg-gray-200 rounded-lg px-2 py-1 font-semibold text-black">
                 {data?.personal?.clan}
               </div>
             </>
@@ -83,7 +83,7 @@ const SideComponent: React.FC<SideComponentProp> = ({
                 <div className="sm:h-[140px] sm:overflow-scroll cards-container">
                   {data?.jutsu &&
                     data?.jutsu?.map((item: any, index: number) => {
-                      return <div key={index}>️🥷 {item}</div>;
+                      return <div key={index} className="text-black">️🥷 {item}</div>;
                     })}
                 </div>
               </div>

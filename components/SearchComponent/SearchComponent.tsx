@@ -23,7 +23,7 @@ const SearchComponent: React.FC<searchComponentProp> = ({ setSearchValue }) => {
     <div className="  bg-white px-4 py-2 flex justify-center items-center  rounded-2xl shadow-lg lg:w-7/12 sm:w-full w-12/12 ">
       <input
         type="text"
-        className="w-full h-full  outline-none"
+        className="w-full h-full  outline-none text-black"
         placeholder="Search Character"
         onChange={(e) => handleChange(e)}
       />

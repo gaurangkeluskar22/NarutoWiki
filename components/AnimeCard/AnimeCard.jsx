@@ -10,7 +10,7 @@ const AnimeCard = ({ item, index }) => {
         alt="character-image"
         draggable={false}
       />
-      <div className="font-bold text-lg mb-4 text-center">{item?.name}</div>
+      <div className="font-bold text-lg mb-4 text-center text-black">{item?.name}</div>
     </div>
   );
 };
