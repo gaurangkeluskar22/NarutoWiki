@@ -4,6 +4,7 @@ import AnimeCard from "@/components/AnimeCard/AnimeCard";
 import { useEffect, useState, useRef } from "react";
 import SearchComponent from "@/components/SearchComponent/SearchComponent";
 import SideComponent from "@/components/SideComponent/SideComponent";
+import {APIResponse } from '../../API.js';
 
 const Home = () => {
   const [animeData, setAnimeData] = useState<any>([]);
@@ -11,18 +12,14 @@ const Home = () => {
   const [page, setPage] = useState(2);
   const [selectedId, setSelectedId] = useState(-1);
   const [searchValue, setSearchValue] = useState("");
-  const [defaultData, setDefaultData] = useState([])
+  const [defaultData, setDefaultData] = useState<any>([])
   const [searchData, setSearchData] = useState([])
-  const [allData, setAllData] = useState([]);
+  const [allData, setAllData] = useState<any>([]);
 
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const res = await fetch(
-          `https://narutodb.xyz/api/character?page=1&limit=2000`
-        );
-        const data = await res.json();
-        setAllData(data?.characters);
+        setAllData(APIResponse?.characters);
       } catch (e) {
         console.error(e);
       }
@@ -34,14 +31,15 @@ const Home = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch(
-          `https://narutodb.xyz/api/character?page=${page}&limit=50`
-        );
-        const data = await res.json();
+        const itemsPerPage = 50;
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        const data = APIResponse?.characters?.slice(startIndex, endIndex);
+
         setDefaultData((prev: any) => {
           return prev?.length === 0
-            ? data?.characters
-            : [...prev, ...data?.characters];
+            ? data
+            : [...prev, ...data];
         });
       } catch (error) {
         console.error("Error fetching data:", error);

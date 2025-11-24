@@ -70,7 +70,7 @@ const SideComponent: React.FC<SideComponentProp> = ({
           {data?.name && <div className="text-2xl font-bold text-black">{data.name}</div>}
           {data?.personal?.clan && (
             <>
-              <div>Clan</div>
+              <div className="text-black">Clan</div>
               <div className="bg-gray-200 rounded-lg px-2 py-1 font-semibold text-black">
                 {data?.personal?.clan}
               </div>
@@ -79,7 +79,7 @@ const SideComponent: React.FC<SideComponentProp> = ({
           <div>
             {data?.jutsu && (
               <div className="flex justify-start flex-col  p-2 my-2">
-                <div className="text-center font-bold ">🌀 Justu 🌀</div>
+                <div className="text-center font-bold text-black">🌀 Justu 🌀</div>
                 <div className="sm:h-[140px] sm:overflow-scroll cards-container">
                   {data?.jutsu &&
                     data?.jutsu?.map((item: any, index: number) => {
